@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:schema_1501232545098="http://www.example.org/schema/1501232545098" xmlns:wsdl_1501150473873="http://www.example.org/wsdl/1501150473873" xmlns:wsdl_1501232545034="http://www.example.org/wsdl/1501232545034" xmi:id="_4tKUYHH_EeeqW6GhIzERlA" targetNamespace="http://tns.tibco.com/bw/composite/SampleRESTAPI.module" name="SampleRESTAPI.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_M0To0HIAEeeqW6GhIzERlA" name="db2rest" promote="Componentdb2rest/db2rest">
+    <sca:interface.wsdl xmi:id="_M0dZ0HIAEeeqW6GhIzERlA" interface="http://xmlns.example.com/20170726194443PLT#wsdl.interface(db2rest)" scaext:wsdlLocation="../Processes/samplerestapi/module/db2rest.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_M0pAAHIAEeeqW6GhIzERlA" name="RestService" path="/db2rest/{container_no}" docBasePath="http://localhost:7777/SampleRESTAPI.module" docResourcePath="db2rest" basePath="/" connector="samplerestapi.module.db2rest" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/samplerestapi.module.db2rest-db2rest.json">
+      <operation xmi:id="_M0vtsHIAEeeqW6GhIzERlA" operationName="get" nickname="get-db2rest" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_M2BgEHIAEeeqW6GhIzERlA">
+        <parameterMapping xmi:id="_M2CuMHIAEeeqW6GhIzERlA" parameterName="container_no" parameterType="Path" required="true"/>
+      </parameters>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_M0vtsXIAEeeqW6GhIzERlA" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_uNiq0HNzEeeaV-djyiYoaQ" name="voyageinfo_ws" promote="Componentvoyageinfo_ws/voyageinfo_ws">
+    <sca:interface.wsdl xmi:id="_uNpYgHNzEeeaV-djyiYoaQ" interface="http://www.example.org/wsdl/1501232545034#wsdl.interface(voyageinfo_ws)" scaext:wsdlLocation="../Service%20Descriptors/voyageinfo_ws.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_4yHc0HNzEeeaV-djyiYoaQ" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/742eadac1ccc4cec8645fd360e69a1f1/SOAPServiceBinding" portTypeQName="wsdl_1501232545034:voyageinfo_ws" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/SampleRESTAPI.module/Service%20Descriptors/voyageinfo_ws.wsdl">
+      <bindingType xmi:id="_4yHc0XNzEeeaV-djyiYoaQ"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_9mGwQHNzEeeaV-djyiYoaQ" endpointURI="/SOAPServiceBinding/voyageinfo_ws/" httpConnector="samplerestapi.module.db2rest"/>
+      <operationConfiguration xmi:id="_4yHc0nNzEeeaV-djyiYoaQ" description="" operationName="voyage_op" action="voyage_op" actionNeeded="true">
+        <bindingType xmi:id="_4yHc03NzEeeaV-djyiYoaQ"/>
+        <messageConfiguration xmi:id="_4yHc1HNzEeeaV-djyiYoaQ" messageQName="wsdl_1501232545034:voyage_opRequest" wsdlLocation="platform:/resource/SampleRESTAPI.module/Service%20Descriptors/voyageinfo_ws.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_4yHc1XNzEeeaV-djyiYoaQ" partName="parameters" partElementName="schema_1501232545098:voyage_opRequest"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_4yHc1nNzEeeaV-djyiYoaQ" messageQName="wsdl_1501232545034:voyage_opResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/SampleRESTAPI.module/Service%20Descriptors/voyageinfo_ws.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_4yHc13NzEeeaV-djyiYoaQ" partName="parameters" partElementName="schema_1501232545098:voyage_opResponse"/>
+        </messageConfiguration>
+        <context xmi:id="_4yHc2HNzEeeaV-djyiYoaQ">
+          <inputMapping xmi:id="_4yHc2XNzEeeaV-djyiYoaQ"/>
+          <outputMapping xmi:id="_4yHc2nNzEeeaV-djyiYoaQ" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_4yHc23NzEeeaV-djyiYoaQ" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:property xmi:id="_5puqUHH_EeeqW6GhIzERlA" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_5qA-MHH_EeeqW6GhIzERlA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_5qHr4HH_EeeqW6GhIzERlA" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_5qMkYHH_EeeqW6GhIzERlA" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_5qRc4HH_EeeqW6GhIzERlA" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_5qW8cHH_EeeqW6GhIzERlA" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_5qdDEHH_EeeqW6GhIzERlA" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_5qiioHH_EeeqW6GhIzERlA" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_5qoCMHH_EeeqW6GhIzERlA" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_M0GNcHIAEeeqW6GhIzERlA" name="Componentdb2rest" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_M0GNcXIAEeeqW6GhIzERlA" processName="samplerestapi.module.db2rest"/>
+    <sca:service xmi:id="_M0OJQHIAEeeqW6GhIzERlA" name="db2rest">
+      <sca:interface.wsdl xmi:id="_M0PXYHIAEeeqW6GhIzERlA" interface="http://xmlns.example.com/20170726194443PLT#wsdl.interface(db2rest)" scaext:wsdlLocation="../Processes/samplerestapi/module/db2rest.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_OViXcHNzEeeaV-djyiYoaQ" name="Componentvoyageinfo_ws" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_OViXcXNzEeeaV-djyiYoaQ" processName="samplerestapi.module.voyageinfo_ws"/>
+    <sca:service xmi:id="_uNeZYHNzEeeaV-djyiYoaQ" name="voyageinfo_ws">
+      <sca:interface.wsdl xmi:id="_uNfngHNzEeeaV-djyiYoaQ" interface="http://www.example.org/wsdl/1501232545034#wsdl.interface(voyageinfo_ws)" scaext:wsdlLocation="../Service%20Descriptors/voyageinfo_ws.wsdl"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_U6MvkHN5EeeaV-djyiYoaQ" name="Componentcall_ws" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_U6MvkXN5EeeaV-djyiYoaQ" processName="samplerestapi.module.call_ws"/>
+  </sca:component>
+</sca:composite>

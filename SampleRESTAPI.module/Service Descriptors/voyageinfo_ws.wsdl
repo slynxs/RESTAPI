@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:extns="http://www.example.org/schema/1501232545098" xmlns:tns="http://www.example.org/wsdl/1501232545034" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="voyageinfo_ws" targetNamespace="http://www.example.org/wsdl/1501232545034">
+  <wsdl:import namespace="http://www.example.org/schema/1501232545098"/>
+  <wsdl:message name="voyage_opRequest">
+    <wsdl:part element="extns:voyage_opRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="voyage_opResponse">
+    <wsdl:part element="extns:voyage_opResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="voyageinfo_ws">
+    <wsdl:operation name="voyage_op">
+      <wsdl:input message="tns:voyage_opRequest" name="voyage_opInput"/>
+      <wsdl:output message="tns:voyage_opResponse" name="voyage_opOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

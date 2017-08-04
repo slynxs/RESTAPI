@@ -1,0 +1,7 @@
+{
+    "records": [],
+    "resources": [{
+        "location": "Service Descriptors/samplerestapi.module.db2rest-db2rest.json",
+        "type": "generated"
+    }]
+}

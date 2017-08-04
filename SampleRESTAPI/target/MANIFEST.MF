@@ -1,0 +1,10 @@
+Manifest-Version: 1.0.0.qualifier
+TIBCO-BW-Application: META-INF/TIBCO.xml
+Bundle-SymbolicName: SampleRESTAPI
+Bundle-Name: SampleRESTAPI
+Bundle-Version: 1.0.0.qualifier
+Bundle-ManifestVersion: 2
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-Version: 6.3.5 HF3 V30 2017-05-31
+

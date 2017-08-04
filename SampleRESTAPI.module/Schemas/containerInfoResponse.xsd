@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:tibex="http://www.tibco.com/bpel/2007/extensions" xmlns:tns="http://www.example.com/namespaces/tns/1500996405389" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.example.com/namespaces/tns/1500996405389">
+  <xsd:element name="Element">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="1" minOccurs="1" name="vessel" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="callSign" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="voyageIn" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="voyageOut" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="E_I" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="ISO_CODE" type="xsd:string"/>
+            </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

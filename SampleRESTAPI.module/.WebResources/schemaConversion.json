@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/SampleRESTAPI.module/Service Descriptors/samplerestapi.module.db2rest-db2rest.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.com/namespaces/tns/1500996405389"
+    },
+    {
+        "jsonSchemaLocation": "/SampleRESTAPI.module/Service Descriptors/samplerestapi.module.db2rest-db2rest.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://xmlns.example.com/db2rest/parameters"
+    }
+]}
